@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>ryujinx</id>
+    <version>1.1.54</version>
+    <packageSourceUrl>https://github.com/ark0f/choco-ryujinx</packageSourceUrl>
+
+    <title>Ryujinx</title>
+    <authors>Ryujinx Team and Contributors</authors>
+    <projectUrl>https://ryujinx.org</projectUrl>
+    <iconUrl>https://i.imgur.com/WcCj6Rt.png</iconUrl>
+    <licenseUrl>https://github.com/Ryujinx/Ryujinx/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/Ryujinx/Ryujinx</projectSourceUrl>
+    <tags>ryujinx SPACE_SEPARATED</tags>
+    <summary>Ryujinx - Nintendo Switch Emulator</summary>
+    <description><![CDATA[Ryujinx is an open-source Nintendo Switch emulator created by gdkchan and written in C#.
+
+This emulator aims at providing excellent accuracy and performance, a user-friendly interface, and consistent builds.
+
+Ryujinx is available on GitHub under the MIT license.
+]]></description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
