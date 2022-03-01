@@ -21,7 +21,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <licenseUrl>https://github.com/Ryujinx/Ryujinx/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Ryujinx/Ryujinx</projectSourceUrl>
-    <tags>ryujinx SPACE_SEPARATED</tags>
+    <tags>ryujinx emulator</tags>
     <summary>Ryujinx - Nintendo Switch Emulator</summary>
     <description><![CDATA[Ryujinx is an open-source Nintendo Switch emulator created by gdkchan and written in C#.
 
