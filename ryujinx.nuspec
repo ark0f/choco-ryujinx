@@ -11,11 +11,12 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ryujinx</id>
-    <version>1.1.54</version>
+    <version>1.1.131</version>
     <packageSourceUrl>https://github.com/ark0f/choco-ryujinx</packageSourceUrl>
 
     <title>Ryujinx</title>
     <authors>Ryujinx Team and Contributors</authors>
+    <owners>ark0f</owners>
     <projectUrl>https://ryujinx.org</projectUrl>
     <iconUrl>https://i.imgur.com/WcCj6Rt.png</iconUrl>
     <licenseUrl>https://github.com/Ryujinx/Ryujinx/blob/master/LICENSE.txt</licenseUrl>
