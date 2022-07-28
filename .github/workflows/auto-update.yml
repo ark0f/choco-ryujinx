@@ -23,6 +23,6 @@ jobs:
             *.ps1
       - uses: andstor/file-existence-action@v1
         with:
-          files: '*.nupkg'
+          files: 'choco-ryujinx.*.nupkg'
       - run: choco push -k ${{ secrets.CHOCO_API_KEY }}
         if: steps.check_files.outputs.files_exists == 'true'
