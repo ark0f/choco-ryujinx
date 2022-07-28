@@ -1,3 +1,5 @@
+name: Auto update
+
 on:
   schedule:
     - cron: '0 0 * * *'  # every day at midnight
@@ -16,4 +18,11 @@ jobs:
       - uses: peter-evans/create-pull-request@v4
         with:
           delete-branch: true
+          add-paths: |
+            *.nuspec
+            *.ps1
+      - uses: andstor/file-existence-action@v1
+        with:
+          files: '*.nupkg'
       - run: choco push -k ${{ secrets.CHOCO_API_KEY }}
+        if: steps.check_files.outputs.files_exists == 'true'
