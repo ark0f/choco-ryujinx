@@ -1,0 +1,19 @@
+on:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'master'
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: cinst au -y
+      - run: ./update.ps1
+      - uses: peter-evans/create-pull-request@v4
+        with:
+          delete-branch: true
+      - run: choco push -k ${{ secrets.CHOCO_API_KEY }}
