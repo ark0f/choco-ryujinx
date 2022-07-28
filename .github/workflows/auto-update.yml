@@ -16,6 +16,7 @@ jobs:
       - run: cinst au -y
       - run: ./update.ps1
       - uses: andstor/file-existence-action@v1
+        id: check_files
         with:
           files: '*.nupkg'
       - run: choco push -k ${{ secrets.CHOCO_API_KEY }}
