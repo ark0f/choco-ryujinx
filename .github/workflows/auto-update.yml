@@ -5,6 +5,10 @@ on:
     - cron: '0 0 * * *'  # every day at midnight
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ryujinx
+
 jobs:
   update:
     runs-on: windows-latest
@@ -19,11 +23,12 @@ jobs:
       - uses: andstor/file-existence-action@v1
         id: check_files
         with:
-          files: '*.nupkg'
+          files: '**/*.nupkg'
       - run: choco push -k ${{ secrets.CHOCO_API_KEY }}
         if: steps.check_files.outputs.files_exists == 'true'
       - uses: peter-evans/create-pull-request@v4
         with:
+          path: ryujinx
           delete-branch: true
           add-paths: |
             *.nuspec
