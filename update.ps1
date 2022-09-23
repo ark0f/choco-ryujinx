@@ -1,10 +1,13 @@
-$releases = "https://github.com/Ryujinx/release-channel-master/releases"
+$releases = "https://api.github.com/repos/Ryujinx/release-channel-master/releases/latest"
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = ConvertFrom-Json $download_page
     $regex   = '.zip$'
-    $url     = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
-    $url     = 'https://github.com' + $url
+    $url     = $download_page.assets | 
+        Select-Object -Expand browser_download_url |
+        Where-Object { $_ -match $regex } | 
+        Select-Object -First 1
     $version = $url -split '/' | Select-Object -Last 1 -Skip 1
     return @{ Version = $version; URL64 = $url }
 }
