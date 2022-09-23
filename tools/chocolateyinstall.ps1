@@ -25,11 +25,11 @@ function InstallShortcut {
   )
 
   $shortcutArgs = @{
+    shortcutFilePath = $ShortcutPath
     workingDirectory = $ryujinx_folder
     targetPath       = "$ryujinx_folder\Ryujinx.exe"
   }
 
-  $shortcutArgs.shortcutFilePath = $ShortcutPath
   Install-ChocolateyShortcut @shortcutArgs
 }
 
