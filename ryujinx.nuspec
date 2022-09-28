@@ -11,7 +11,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ryujinx</id>
-    <version>1.1.279</version>
+    <version>1.1.280</version>
     <packageSourceUrl>https://github.com/ark0f/choco-ryujinx</packageSourceUrl>
 
     <title>Ryujinx</title>
@@ -29,6 +29,14 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 This emulator aims at providing excellent accuracy and performance, a user-friendly interface, and consistent builds.
 
 Ryujinx is available on GitHub under the MIT license.
+
+# choco-ryujinx
+
+Package can optionally install desktop shortcut. Run:
+
+```powershell
+choco install ryujinx --params "/DesktopShortcut"
+```
 ]]></description>
   </metadata>
   <files>
