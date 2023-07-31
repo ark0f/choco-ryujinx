@@ -24,7 +24,7 @@ jobs:
         id: check_files
         with:
           files: '**/*.nupkg'
-      - run: choco push -k ${{ secrets.CHOCO_API_KEY }}
+      - run: choco push -k ${{ secrets.CHOCO_API_KEY }} --source=https://push.chocolatey.org/
         if: steps.check_files.outputs.files_exists == 'true'
       - uses: peter-evans/create-pull-request@v4
         with:
