@@ -3,8 +3,8 @@
 $toolsDir   = Join-Path $(Get-ToolsLocation) $env:ChocolateyPackageName
 $pp = Get-PackageParameters
 $ryujinx_folder = "$toolsDir\publish"
-$url64      = 'https://github.com/Ryujinx/release-channel-master/releases/download/1.1.537/ryujinx-1.1.537-win_x64.zip'
-$checksum64 = 'f346a062085e87a2eb388ba3593c325c11e496163b546a377e0f7ef472c1a47d'
+$url64      = 'https://github.com/Ryujinx/release-channel-master/releases/download/1.1.1102/ryujinx-1.1.1102-win_x64.zip'
+$checksum64 = 'dc2f78b4cd44474c603be7bc56c9bf0b14a356a7525f9e95f7f19262dd935791'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
